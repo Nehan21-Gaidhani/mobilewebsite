@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+        integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+
+    <style>
+        .head {
+            background-image:linear-gradient( darkgreen,yellow);
+            padding: 12px;
+            text-align: center;
+            margin: 8px;
+            border-radius: 5px;
+            border: 3px solid #b045cb;
+            font-size: 1.3rem;
+        }
+
+        .nav {
+            cursor: pointer;
+            color: darkmagenta;
+            text-align: center;
+            padding: 2px 20px;
+            background-color: rgb(117, 86, 105);
+            margin: 8px;
+            border-radius: 4px;
+            padding: 3px;
+        }
+
+        .nav ul {
+            overflow: auto;
+        }
+
+        .nav li {
+            float: left;
+            list-style: none;
+            margin: 4px 32px;
+        }
+
+        .nav li a {
+            text-decoration: none;
+            color: rgba(247, 243, 239, 0.993);
+            font-weight: bold;
+
+        }
+
+        .search {
+            float: right;
+            color: beige;
+            margin-right: 57px;
+        }
+
+        .nav input {
+            border-radius: 7px;
+            border: 2px solid rgb(0, 0, 0);
+            padding: 3px;
+        }
+
+        .nav input:hover {
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .box1 {
+            border: 2px solid black;
+            margin: 21px 18px;
+            /* background-color: rgb(236, 185, 119); */
+            padding: 6px;
+            width: 15%;
+            height: 230px;
+            box-sizing: border-box;
+            display: inline-block;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQKD48NBxT6x7EPUtAqY7yrdD9zy2nwrL5LA&usqp=CAU);
+        }
+
+        .box2 {
+            border: 2px solid black;
+            margin: 21px 18px;
+            /* background-color: rgb(236, 185, 119); */
+            padding: 6px;
+            width: 15%;
+            height: 230px;
+            box-sizing: border-box;
+            display: inline-block;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcGPKT-o7UCVeFmhfEfM4lELgSnfGRagR4lg&usqp=CAU);
+
+        }
+
+        .box3 {
+            border: 2px solid black;
+            margin: 21px 18px;
+            /* background-color: rgb(236, 185, 119); */
+            padding: 6px;
+            width: 15%;
+            height: 230px;
+            box-sizing: border-box;
+            display: inline-block;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRimjl1n1CTp3tMBXfqADBX0ARvdHlsOM2Z2Q&usqp=CAU);
+            background-size: 100% 240px;
+
+
+        }
+
+        .box4 {
+            border: 2px solid black;
+            margin: 21px 18px;
+            /* background-color: rgb(236, 185, 119); */
+            padding: 6px;
+            width: 15%;
+            height: 230px;
+            box-sizing: border-box;
+            display: inline-block;
+            background-image: url(https://newspaperads.ads2publish.com/wp-content/uploads/2021/03/samsung-galaxy-s-21-5g-at-54999-plus-get-galazy-watch-active2-ad-times-of-india-mumbai-05-03-2021.jpg);
+            background-size: 100% 230px;
+
+
+        }
+
+        .box5 {
+            border: 2px solid black;
+            margin: 21px 18px;
+            /* background-color: rgb(236, 185, 119); */
+            padding: 6px;
+            width: 15%;
+            height: 230px;
+            box-sizing: border-box;
+            display: inline-block;
+            background-image: url(data:image/jpeg;base64,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);
+            background-size: 100% 230px;
+
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 0px 20px;
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+            font-size: medium;
+            font-weight: 600;
+            margin: 80px;
+        }
+
+        body {
+            background: linear-gradient(#6fcdd5, #77cb9d);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+
+        .us {
+            background-color: #2a1111;
+            padding: 2px;
+            margin: 2px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contacts {
+            border-radius: 5px;
+            background: linear-gradient(to bottom, yellow, #8bdbf5);
+            height: 400px;
+        }
+
+        .right {
+            float: right;
+            margin: 20px none;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="head">
+        <h2>Electronics Store</h2>
+        <p style="font-style: oblique;"></p>
+    </div>
+    <header>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Contacts</a></li>
+                <div class="search">Search : <input type="text" name="search" placeholder="Search the website"></div>
+
+            </ul>
+        </nav>
+    </header>
+    <div class="cont">
+        <div class="box1">
+
+        </div>
+        <div class="box2">
+
+        </div>
+        <div class="box3">
+
+        </div>
+        <div class="box4">
+
+        </div>
+        <div class="box5">
+
+        </div>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Realme</a></li>
+            <li><a href="#">Google-Pixel</a></li>
+            <li><a href="#">Xiaomi</a></li>
+            <li><a href="#">Samsung galaxy</a></li>
+            <li><a href="#">Iphone</a></li>
+        </ul>
+    </nav>
+    <br><br><br>
+    <div class="contacts">
+        <section id="contact-form">
+            <div class="us">
+                <center>
+                    <h2>Contact Us</h2>
+                </center>
+            </div>
+
+            <div class="right">
+                <form action="">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="3" required></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+        </section>
+        <section id="contact-info">
+            <h2>Contact Information</h2>
+            <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+            <p><strong>Email:</strong> contact@example.com</p>
+            <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Electronics Store</p>
+    </footer>
+
+</body>
+
+</html>
